@@ -1,0 +1,573 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color:#999999;
+}
+
+.right {
+  right: 0;
+  background-color:#CCCCFF;
+}
+      {
+        box-sizing: border-box;
+      }
+      .child{
+          border: 1px solid black;
+          background-color: lightgray;
+          padding-left: 35px;
+          padding-right: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px; 
+          width: 615px;
+          height: 620px;
+      }
+      .child1{
+          border: 1px solid black;
+          background-color: lightgray;
+          top: 120px;
+          width:625px;
+          height: 650px;
+          padding-top:5px;
+          padding-left: 35px;
+          padding-right: 35px;
+          padding-bottom: 20px;
+      }
+      .parent{
+        display: block;
+        margin-top: 20px;
+        margin-left: 30px;
+        margin-right: 25px;
+  
+      }
+      .parent1{
+        display:block;
+        margin-top: 20px;
+        padding-left: 35px;
+        padding-right: 15px;
+      
+      }
+
+     .active{
+        font-size: 12px;
+        font-family:Times new Roman;
+        padding:0.1px 0.1px;
+        background-color:#008CBA;
+        border-radius: 4px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+     }
+
+     .active2{
+        font-size: 8px;
+        font-family:Times new Roman;
+        padding:5px 0.1px;
+        background-color:#008CBA;
+        border: 0px solid;
+        border-radius: 4px;
+        padding-left: 5px;
+        position: relative;
+        top: -432px;
+        left: 280px;
+     }
+
+     .active1{
+        font-size: 16px;
+        font-size: max(16px, 1em);
+        font-family:Times new Roman;
+        padding: 0.25em 1em;
+        background-color:;
+        border: 2px solid var(--input-border);
+        border-radius: 4px;
+        position: relative;
+        top: -441px;
+        left: 260px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        padding-left: 95px;
+        padding-right: 80px;
+       }
+        .active3{
+        font-size: 10px;
+        font-family:Times new Roman;
+        background-color:;
+        border: 2px solid var(--input-border);
+        border-radius: 4px;
+        position: relative;
+        top: -600px;
+        left: 425px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 55px;
+        padding-right:5px;
+       }
+
+
+      #button1{
+        border-radius: 14px;
+        background-color:#008CBA;
+        color: white;
+        padding: 5px 65px;
+        text-align: center;
+        border: none;
+        position: relative;
+        left: 340px;
+        top: -350px;
+        font-size: 20px;
+        font-family:Times New Roman;
+      }
+      #button2{
+        border-radius: 12px;
+        background-color:#008CBA;
+        color: white;
+        padding: 5px 40px;
+        text-align: center;
+        border: none;
+        position: relative;
+        top: -320px;
+        left: 375px;
+        font-size: 15px;
+        font-family:Times New Roman;
+      }
+
+      
+
+      #result1{
+        float: left;
+        width:15%;
+        position: fixed;
+        top: 75px;
+        left: 800px;
+      }
+     #result2{
+        float: right;
+        width:80%;
+        position: fixed;
+        top: 75px;
+        left:924px;
+        padding-right: 30px
+      }
+      #result3{
+        float: left;
+        width:20%;
+        position: fixed;
+        top: 176px;
+        left:800px;
+      }
+      #result4{
+        float: left;
+        width:50%;
+        position: fixed;
+        top: 176px;
+        left:924px;
+      }
+       #result5{
+        float:left;
+        width:20%;
+        position: fixed;
+        top: 176px;
+        left: 1340px;
+      }
+       #result6{
+        float:left;
+        width:20%;
+        position: fixed;
+        top: 596px;
+        left: 800px;
+      }
+
+      #result7{
+        float:left;
+        width:3%;
+        position: fixed;
+        top: 655px;
+        left: 850px;
+      }
+      #result8{
+        float:left;
+        width:3%;
+        position: fixed;
+        top: 655px;
+        left: 1100px;
+      }
+      #result9{
+        float:left;
+        width:3%;
+        position: fixed;
+        top: 655px;
+        left: 1350px;
+      }
+     #demo{
+        border-radius: 8px;
+        font-family: Times New Roman;
+        border: none;
+        position: fixed;
+        top: 100px;
+        left: 1030px;
+        font-size: 20px;
+        display:block;
+        background-color:#008CBA;
+        padding-right: 9px;
+        padding-bottom: 1px;
+        padding-left: 9px;
+        padding-top: 3px;
+      }
+      
+
+</style>   
+</head>
+<div class="split left">
+  <label style="position: relative; left: 220px; border-radius: 12px; background-color:#008CBA; color: white;  padding: 8px 35px;text-align: center; border: none;"> CONFIGUARATION PANEL</label>
+   <section class="parent">
+        <section class="child">
+        <div id="urlOrUpload">
+             <label for="file" style="color: black; font-family: Times New Roman">Upload Logo Image</label><br/> <input type="file" accept="image/*"/ id="a1" class="active"><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman">Upload Header Image</label><br/> <input type="file" accept="image/*"/ id="a2" class="active"><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman">Upload LeftPannel Image</label><br/> <input type="file" accept="image/*"/ id="a3" class="active"><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman">Upload Background Image</label><br/> <input type="file" accept="image/*"/ id="a4" class="active"><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman">Upload RightPannel Image</label><br/> <input type="file" accept="image/*"/ id="a5" class="active"><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman">Upload Footer Image</label><br/> <input type="file" accept="image/*"/ id="a6" class="active"><br/>
+            <br/>
+            <input type= text id="namehere" onchange="displayname()" placeholder="Enter the Header Title" class="active1" /><br/>
+            <br/>
+            <label for="file" style="color: black; font-family: Times New Roman; position: relative;top: -435px; left:280px;">Icon Image 1</label><br/> <input type="file" accept="image/*"/ id="a7" class="active2"><br/><br/>
+            <label for="file" style="color: black; font-family: Times New Roman; position: relative;top: -435px; left:280px;">Icon Image 2</label><br/> <input type="file" accept="image/*"/ id="a8" class="active2"><br/><br/>
+            <label for="file" style="color: black; font-family: Times New Roman; position: relative;top: -435px; left:280px;">Icon Image 3</label><br/> <input type="file" accept="image/*"/ id="a9" class="active2"><br/><br/>
+            <input type="text" placeholder="Enter Icon Url" id="logo1" class="active3" ><br/>
+            <br/>
+            <br/>
+            <input type="text" placeholder="Enter Icon Url" id="logo2" class="active3" ><br/>
+            <br/>
+            <br/>
+            <input type="text" placeholder="Enter Icon Url" id="logo3" class="active3" ><br/>
+            <br/>
+            <button type="button" id="button1" onclick="upload1(); upload2(); upload3(); upload4(); upload5(); upload6();upload7();upload8();upload9() ">Preview</button>
+            <br/>
+            <input type="button" value = "CLEAR" onclick="history.go(0)" id="button2" />
+        </section>
+      </section>
+    </div>     
+  </div>
+</div>
+
+<div class="split right">
+      <label style="position: relative; left: 280px; border-radius: 12px; background-color:#008CBA; color: white;  padding: 8px 35px;text-align: center; border: none;"> PREVIEW PANEL</label>
+      <section class="parent1">
+      <section class="child1">
+         <div id="result1"></div>
+            <script>
+             function upload1() {
+             if (document.querySelector("input[type=file][id=a1]").files[0]){
+             let input = document.querySelector("input[type=file][id=a1]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+             function display(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             img.width=125
+             img.height=100
+             document.querySelector("#result1").appendChild(img);
+             }
+             </script>
+
+
+
+
+ <div id="result2"></div>
+            <script>
+             function upload2() {
+             if (document.querySelector("input[type=file][id=a2]").files[0]){
+             let input = document.querySelector("input[type=file][id=a2]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display1(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display1(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result2").appendChild(img);
+             img.width=540
+             img.height=100
+             }
+             </script>             
+
+
+ <div id="result3"></div>
+            <script>
+             function upload3() {
+             if (document.querySelector("input[type=file][id=a3]").files[0]){
+             let input = document.querySelector("input[type=file][id=a3]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display2(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display2(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result3").appendChild(img);
+             img.width=125
+             img.height=420
+             }
+             </script>         
+
+
+<div id="result4"></div>
+            <script>
+             function upload4() {
+             if (document.querySelector("input[type=file][id=a4]").files[0]){
+             let input = document.querySelector("input[type=file][id=a4]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display3(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display3(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result4").appendChild(img);
+             img.width=415
+             img.height=420
+             }
+             </script>             
+
+
+        
+<div id="result5"></div>
+            <script>
+             function upload5() {
+             if (document.querySelector("input[type=file][id=a5]").files[0]){
+             let input = document.querySelector("input[type=file][id=a5]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display4(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display4(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result5").appendChild(img);
+             img.width=125
+             img.height=420
+             }
+             </script>         
+
+
+<div id="result6"></div>
+            <script>
+             function upload6() {
+             if (document.querySelector("input[type=file][id=a6]").files[0]){
+             let input = document.querySelector("input[type=file][id=a6]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display5(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display5(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result6").appendChild(img);
+             img.width=670
+             img.height=120
+             }
+             </script> 
+
+<div>
+  <p id="demo"></p>
+               <script>
+                  var button=document.getElementById('button1')
+
+                   button.addEventListener('click',function displayname() {
+                   document.getElementById("demo").innerHTML = 
+                   document.getElementById("namehere").value;
+                    })
+                </script>
+              </div>    
+
+
+<div>
+<button id="result7"></button>
+</div> 
+<div id="result7"></div>
+            <script>
+             function upload7() {
+             if (document.querySelector("input[type=file][id=a7]").files[0]){
+             let input = document.querySelector("input[type=file][id=a7]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display6(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display6(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result7").appendChild(img);
+             img.width=30
+             img.height=30
+             }
+             </script>
+             <script>
+             let btnOpen = document.getElementById('result7');
+             let input= document.getElementById('logo1');
+             btnOpen.addEventListener('click', () => {
+             window.open(input.value, '_blank', 'height=600px, width=600px');
+             });
+             </script>
+
+<div>
+<button id="result8"></button>
+</div> 
+<div id="result8"></div>
+            <script>
+             function upload8() {
+             if (document.querySelector("input[type=file][id=a8]").files[0]){
+             let input = document.querySelector("input[type=file][id=a8]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display7(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display7(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result8").appendChild(img);
+             img.width=30
+             img.height=30
+             }
+             </script>
+             <script>
+             let btnOpen1= document.getElementById('result8');
+             let input1= document.getElementById('logo2');
+             btnOpen1.addEventListener('click', () => {
+             window.open(input1.value, '_blank', 'height=600px, width=600px');
+             });
+             </script>
+
+<div>
+<button id="result9"></button>
+</div> 
+<div id="result9"></div>
+            <script>
+             function upload9() {
+             if (document.querySelector("input[type=file][id=a9]").files[0]){
+             let input = document.querySelector("input[type=file][id=a9]");
+             if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function(e) {
+             display8(e.target.result);
+              }
+
+             reader.readAsDataURL(input.files[0]);
+             }
+             } 
+             }
+
+             function display8(res) {
+             let img = document.createElement("IMG");
+             img.src=res;
+             document.querySelector("#result9").appendChild(img);
+             img.width=30
+             img.height=30
+             }
+             </script>
+             <script>
+             let btnOpen2= document.getElementById('result9');
+             let input2= document.getElementById('logo3');
+             btnOpen2.addEventListener('click', () => {
+             window.open(input2.value, '_blank', 'height=600px, width=600px');
+             });
+             </script>
+
+
+
+        </section>
+      </section>
+  </div>
+     
+</body>
+</html> 
+
