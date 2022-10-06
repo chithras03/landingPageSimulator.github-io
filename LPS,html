@@ -187,13 +187,13 @@ body {
         top: 176px;
         left: 1340px;
       }
-       #result6{
+      #result6{
         float:left;
         width:20%;
         position: fixed;
         top: 596px;
-        left: 800px;
-      }
+        left:800px;
+       }
 
       #result7{
         float:left;
@@ -436,7 +436,7 @@ body {
              let img = document.createElement("IMG");
              img.src=res;
              document.querySelector("#result6").appendChild(img);
-             img.width=670
+             img.width=665
              img.height=120
              }
              </script> 
